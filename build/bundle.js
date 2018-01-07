@@ -21933,7 +21933,7 @@ var Home = function Home() {
 	return _react2.default.createElement(
 		'div',
 		null,
-		'Im here'
+		'I rock here'
 	);
 };
 
