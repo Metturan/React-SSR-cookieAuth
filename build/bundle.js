@@ -6967,16 +6967,32 @@ module.exports = memoizeStringOnly;
 "use strict";
 
 
-var express = __webpack_require__(52);
-var React = __webpack_require__(20);
-var renderToString = __webpack_require__(105).renderToString;
-var Home = __webpack_require__(114).default;
-var app = express();
+var _express = __webpack_require__(52);
+
+var _express2 = _interopRequireDefault(_express);
+
+var _react = __webpack_require__(20);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _server = __webpack_require__(105);
+
+var _Home = __webpack_require__(114);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var app = (0, _express2.default)();
+
+app.use(_express2.default.static('public'));
 
 app.get('/', function (req, res) {
-	var content = renderToString(React.createElement(Home, null));
+	var content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));
 
-	res.send(content);
+	var html = '\n\t\t<html>\n\t\t\t<head></head>\n\t\t\t<body>\n\t\t\t\t<div>' + content + '</div>\n\t\t\t\t<script src="bundle.js"></script>\n\t\t\t</body>\n\t\t</html>\n\t';
+
+	res.send(html);
 });
 
 app.listen(3000, function () {
@@ -21933,7 +21949,18 @@ var Home = function Home() {
 	return _react2.default.createElement(
 		'div',
 		null,
-		'I rock here'
+		_react2.default.createElement(
+			'div',
+			null,
+			'I rock here'
+		),
+		_react2.default.createElement(
+			'button',
+			{ onClick: function onClick() {
+					return console.log('hi there');
+				} },
+			'Press Me'
+		)
 	);
 };
 

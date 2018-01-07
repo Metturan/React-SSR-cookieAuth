@@ -2,7 +2,10 @@ import React from 'react';
 
 const Home = () => {
 	return (
-		<div>I rock here</div>
+		<div>
+			<div>I rock here</div>
+			<button onClick={() => console.log('hi there')} >Press Me</button>
+		</div>
 	)
 }
 
