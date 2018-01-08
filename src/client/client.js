@@ -1,5 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Home from './components/Home';
+// Starter point for client side application
 
-ReactDOM.hydrate(<Home />, document.querySelector('#root'));
+console.log('hi there');

@@ -1,8 +1,8 @@
 import React from 'react';
 import {renderToString} from 'react-dom/server';
-import Home from '../client/components/Home';
+import Home from './../client/components/home';
 
-export default() => {
+export default () => {
 	const content = renderToString(<Home />);
 
 	const html = `
